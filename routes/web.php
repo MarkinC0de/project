@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ServidoresController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::resource('servidores', ServidoresController::class);
+/*Route::get('/', function (){
+    return view('servidores.index;');
+});*/
+
+Route::resource('servidores', ServidoresController::class);
