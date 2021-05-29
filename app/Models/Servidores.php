@@ -12,6 +12,6 @@ class Servidores extends Model
     protected $table = "registration_severs" ;
 
     protected $fillable = [
-        'nome', 'link-servidor', 'tags'
+        'nome', 'link-servidor', 'tags', 'descricao','created_at', 'resumo_servidor'
     ];
 }

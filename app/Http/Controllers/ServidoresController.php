@@ -16,8 +16,8 @@ class ServidoresController extends Controller
     {
         $servidores = Servidores::latest()->paginate(8);
         return view('servidores.index',compact('servidores')); // ENVIA A VARIAVEL SERVIDORES PARA A VIEW
-            
-        
+
+
     }
 
     /**
@@ -42,11 +42,13 @@ class ServidoresController extends Controller
             $request->validate([
                 'nome' => 'required',
                 'link-servidor' => 'required',
-                'tags' => 'required'
+                'tags' => 'required',
+                'descricao' => 'required',
+                'resumo_servidor' => 'required'
             ]);
-        
+
             Servidores::create($request->all());
-         
+
             return redirect()->route('servidores.index')
                             ->with('success','Servidor registrado com sucesso.');
         }
@@ -71,7 +73,9 @@ class ServidoresController extends Controller
      */
     public function edit(Servidores $servidores)
     {
+        //
         return view('servidores.edit',compact('servidores'));
+
     }
 
     /**
@@ -81,18 +85,32 @@ class ServidoresController extends Controller
      * @param  \App\Models\Servidores  $servidores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servidores $servidores)
+    public function update(Request $request, id $id)
     {
-        $request->validate([
+        $servidores = Servidores::findOrFail($id);
+        $servidores->update([
+            'nome' => $request->nome,
+            'resumo_servidor'=> $request->resumo_servidor,
+            'link-servidor'=> $request->link-servidor,
+            'descricao'=> $request->descricao,
+            'tags'=> $request->tags
+        ]);
+
+        return "Servidor atualizado";
+        /*$request->validate([
             'nome' => 'required',
             'link-servidor' => 'required',
-            'tags' => 'required'
+            'tags' => 'required',
+            'descricao' => 'required',
+            'resumo_servidor' => 'required'
+
+
         ]);
-    
+
         $servidores->update($request->all());
-    
+
         return redirect()->route('servidores.index')
-                        ->with('success','Servidor atualizado com sucesso');
+                        ->with('success','Servidor atualizado com sucesso');*/
     }
 
     /**
@@ -101,10 +119,11 @@ class ServidoresController extends Controller
      * @param  \App\Models\Servidores  $servidores
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Servidores $servidores)
     {
         $servidores->delete();
-    
+
         return redirect()->route('servidores.index')
                         ->with('success','Servidor deletado  com sucesso');
     }
