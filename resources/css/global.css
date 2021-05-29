@@ -1,0 +1,92 @@
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+}
+#sla{
+    font-weight: 500;
+    color: #fff;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    background-color: var(--secondary);
+    border-color: var(--primary);
+}
+#sla:hover{
+    background-color: var(--alternative-primary);
+    border-color: var(--primary);
+
+}
+
+.block{
+    margin-bottom: 10px;
+}
+#search {
+    font-weight: 500;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    border: var(--secondary);
+}
+#component .grid{
+    display: grid;
+    justify-content: end;
+}
+#componentS .grid{
+    display: grid;
+    justify-content: end;
+}
+#hash{
+    font-weight: 500;
+    font-size: 10;
+}
+#logbtn{
+    background-color: #6265e9;
+    border-color: #6265e9;
+    font-weight: 500;
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    color: #fff;
+    border-bottom: solid 4px transparent;
+    font-weight: 500;
+    color: #fff;
+    border-bottom: solid 4px transparent;
+    border-color: #6265e9;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+#logbtn:hover{
+    border-bottom: solid 4px var(--primary);
+    color: var(--primary);
+}
+#header .dropdown-menu{
+    background-color: #6265e9;
+    border-bottom: solid;
+    color: #fff;
+    right: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 0 0 0;
+}
+#header .dropdown-item{
+    background-color: #6265e9;
+    display: grid;
+    grid-template-rows: 13px 13px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    padding-right: 60px;
+    box-shadow: 0 0 0 0;
+
+}
+#header .dropdown-item:hover{
+    border-bottom: solid 1px var(--primary);
+    color: var(--primary);
+}
+#footer h5{
+    color: #6265e9;
+    padding-bottom: 10px;
+}
+#footer{
+    padding-left: 140px;
+}

@@ -1,0 +1,281 @@
+/* TELA INICIAL */
+body,
+html,
+h1 {
+  font-family: "Noto Sans JP,", sans-serif;
+}
+/* body {
+  padding-bottom: 400px;
+  background-color: var(--darkmode);
+  color: var(--darkcolor);
+} */
+#header {
+  width: 100%;
+  transition: background ease-out 0.2s;
+  background-color: #6265e9;
+}
+#header.active {
+  position: fixed;
+  background: #6265e9;
+  z-index: 9999;
+}
+#header .container-fluid {
+  background-color: #6265e9;
+  z-index: 9999;
+}
+#header .navbar-collapse {
+  width: auto;
+  font-weight: 500;
+}
+#header .navbar-brand {
+  color: #fff;
+}
+#header .nav-link {
+  font-weight: 500;
+  padding-left: 0;
+  padding-right: 0;
+  color: #fff;
+  border-bottom: solid 4px transparent;
+}
+#header .nav-link:hover {
+  border-bottom: solid 4px var(--primary);
+  color: var(--primary);
+}
+
+#component {
+  background-size: contain;
+  background-color: #6265e9;
+}
+#component h1 {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 900;
+}
+#component h4 {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+#servers .navbar {
+  border-radius: 20px;
+  outline: #6265e9 solid;
+}
+#servers .navbar-brand {
+  font-size: 30px;
+  color: #000;
+  font-weight: 700;
+}
+/* #cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 25px;
+} */
+
+.cartao:hover {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+  transition-duration: 0.5s;
+  transform: scale(1.05);
+}
+#cards .card {
+  background-color: var(--secondary);
+  color: #fff;
+}
+#cards .list-group-item {
+  font-size: 12px;
+  background-color: var(--secondary);
+  color: #fff;
+}
+#cards .btn {
+  color: #fff;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  background-color: var(--secondary);
+  border-color: var(--primary);
+}
+#cards .btn:hover {
+  background-color: var(--alternative-primary);
+  border-color: var(--primary);
+}
+#cards .card-btn {
+  padding-bottom: 15px;
+  /* display: grid;
+  justify-content: center;
+  grid-template-columns: 110px 110px;
+  grid-gap: 10px; */
+}
+
+#cards .card-title {
+  text-transform: uppercase;
+}
+/* TELA SERVIDOR */
+
+#componentS {
+  background-size: contain;
+  background-color: #6265e9;
+}
+#componentS h1 {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 900;
+}
+#componentS h4 {
+  font-size: 18px;
+  color: #fff;
+}
+#componentS .tags {
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-gap: 20px;
+}
+#componentS .form-control{
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+#componentS .btn-lupa{
+  padding-top: 13px;
+  margin-left: -7px;
+  padding-left: 7px;
+  padding-right: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+
+}
+#serversS {
+  padding-top: 20px;
+  background-color: var(--primary);
+}
+#page {
+  display: grid;
+  justify-content: end;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+#page a {
+  display: grid;
+  justify-content: center;
+  font-weight: 500;
+  color: #fff;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  background-color: var(--secondary);
+  border-color: var(--primary);
+}
+#page a:hover {
+  background-color: var(--alternative-primary);
+  border-color: var(--primary);
+}
+#page .page-link {
+  display: grid;
+  justify-content: center;
+}
+
+/* TELA PERFIL//ADICIONAR SERVIDOR */
+
+#componentP {
+  width: 100%;
+  padding-left: 120px;
+
+  background-color: #6265e9;
+}
+#componentP h1 {
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+#componentP h2 {
+  padding-top: 10px;
+  font-size: 40px;
+  color: #fff;
+}
+#componentP span {
+  padding-top: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+#kk {
+  width: 100%;
+  padding-left: 120px;
+  background-color: #7d7d86;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 300px 300px;
+  padding-top: 60px;
+}
+#kk h1 {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+#botao {
+  display: grid;
+  grid-template-columns: 175px 175px;
+}
+#sls {
+  font-weight: 500;
+  color: #fff;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+#componentS .bi {
+  font-weight: 500;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+
+/* TELA CADASTRO */
+
+#cadastro-body{
+  background-color: #6265e9;
+  color:#6265e9;
+}
+
+#cadastro h1{
+  font-size: 30px;
+  color: #6265e9;
+}
+
+#cadastro .btn-final{
+  display: grid;
+  justify-content: end;
+}
+#cadastro .form-control{
+  box-shadow: 0 0 0 0;
+  border-radius: 10px;
+
+}
+#cadastro .btn{
+  border-radius: 100px;
+}
+#cadastro .aviso{
+  color: #fff;
+}
+#aviso h1, h2, h3, h4, h5, h6, p{
+  color: #6265e9;
+  padding-right: 100px;
+}
+#componentC{
+  padding-top: 50px;
+  background-color: #fff;
+}
+#aviso p{
+  padding-left: 5px;
+}
+
