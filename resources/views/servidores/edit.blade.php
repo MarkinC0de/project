@@ -9,9 +9,10 @@
             <div class="row">
                 <div id="cadastro" class="col-lg-12 rounded" style="background-color: #fff;">
 
-                    <form action=" {{ route('servidores.update', $servidor["id_servidor"])}}" method="POST">
-                        @csrf
+                    <form action=" {{ route('servidores.update',$servidor->id_servidor) }}" method="POST">
                         @method('PUT')
+                        @csrf
+
                         <h1 class="mb-3 pt-3">Informações do Servidor</h1>
                         <div class="input-form col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">

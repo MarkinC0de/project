@@ -32,9 +32,7 @@
           </div>
       </div>
       @foreach($servidores as $servidor)
-       <pre>
-      <?php var_dump($servidor->id_servidor); ?>
-           </pre>
+
           <div id="serversS" class="block">
             <div class="container">
               <div class="row">
@@ -50,8 +48,8 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item">conteudo, jogos,series, sla</li>
                       </ul>
+                        <a class="btn btn-primary mb-md-1" type="button" href="{{ route('servidores.edit',$servidor->id_servidor) }}">Editar</a>
                     <form action="{{ route('servidores.destroy', $servidor->id_servidor) }}" method="POST">
-                          <a class="btn btn-primary mb-md-1" type="button" href="{{ route('servidores.edit',$servidor->id_servidor) }}">Editar</a>
                               @csrf
                               @method('DELETE')
                             <button class="btn btn-primary mb-md-1" type="submit" title="delete" >Excluir</button>

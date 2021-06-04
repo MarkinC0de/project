@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Servidores;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Integer;
 
 class ServidoresController extends Controller
 {
@@ -71,9 +72,9 @@ class ServidoresController extends Controller
      * @param  \App\Models\Servidores  $servidores
      * @return \Illuminate\Http\Response
      */
-    public function edit(Servidores $servidores)
+    public function edit($id)
     {
-        //
+        $servidores = Servidores::findOrFail($id);
         return view('servidores.edit',compact('servidores'));
 
     }
@@ -85,32 +86,20 @@ class ServidoresController extends Controller
      * @param  \App\Models\Servidores  $servidores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, id $id)
+    public function update(Request $request, int $id)
     {
         $servidores = Servidores::findOrFail($id);
+
         $servidores->update([
             'nome' => $request->nome,
             'resumo_servidor'=> $request->resumo_servidor,
             'link-servidor'=> $request->link-servidor,
             'descricao'=> $request->descricao,
-            'tags'=> $request->tags
+            'tags'=> $request->tags,
         ]);
-
-        return "Servidor atualizado";
-        /*$request->validate([
-            'nome' => 'required',
-            'link-servidor' => 'required',
-            'tags' => 'required',
-            'descricao' => 'required',
-            'resumo_servidor' => 'required'
-
-
-        ]);
-
-        $servidores->update($request->all());
 
         return redirect()->route('servidores.index')
-                        ->with('success','Servidor atualizado com sucesso');*/
+            ->with('Servidor atualizado com sucesso.');
     }
 
     /**
@@ -120,8 +109,9 @@ class ServidoresController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(Servidores $servidores)
+    public function destroy($id)
     {
+        $servidores = Servidores::findOrFail($id);
         $servidores->delete();
 
         return redirect()->route('servidores.index')

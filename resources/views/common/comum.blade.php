@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css') }}">
     <title>Meet Find - App @yield('title')</title>
 </head>
-<body style="background-color: #6265e9" >
+<body style="background-color: rgb(145,147,239)" >
 <div id="header" class="col-sm-12 col-lg-12 col-md-12">
     <nav id="nav" class="navbar navbar-expand-lg navbar-light">
         <div class="container">
