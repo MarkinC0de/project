@@ -14,8 +14,8 @@ use App\Http\Controllers\ServidoresController;
 */
 
 //Route::resource('servidores', ServidoresController::class);
-/*Route::get('/', function (){
-    return view('servidores.index;');
-});*/
+Route::get('/', function (){
+    return redirect('servidores');
+});
 
 Route::resource('servidores', ServidoresController::class);

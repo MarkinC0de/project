@@ -3,13 +3,13 @@
     Editar
 @endsection
 @section('conteudo')
-@foreach($servidores as $servidor)
+
     <div id="componentC" class="container rounded">
         <div class="container pb-4">
             <div class="row">
                 <div id="cadastro" class="col-lg-12 rounded" style="background-color: #fff;">
 
-                    <form action=" {{ route('servidores.update',$servidor->id_servidor) }}" method="POST">
+                    <form action=" {{ route('servidores.update',$servidores["id_servidor"]) }}" method="POST">
                         @method('PUT')
                         @csrf
 
@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <strong>Nome</strong>
                                 <label>
-                                    <input type="text" name="nome" value="" class="form-control" placeholder="Nome">
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome">
                                 </label>
                             </div>
                             <div class="input-form col-xs-12 col-sm-12 col-md-12 ">
@@ -33,8 +33,8 @@
                                 <div class="form-group">
                                     <strong>Link do Servidor</strong>
                                     <label>
-                                        <input type="text" name="link-servidor" value="" class="form-control"
-                                               placeholder="Exemplo: https://discord.gg/6duaudy">
+                                        <input type="text" name="link_servidor" class="form-control" placeholder="Exemplo: https://discord.gg/6duaudy">
+
                                     </label>
                                 </div>
                             </div>
@@ -64,5 +64,5 @@
             </div>
         </div>
     </div>
-@endforeach
+
 @endsection

@@ -34,12 +34,11 @@
                                             <input type="text" name="resumo_servidor" class="form-control" placeholder="Informe um breve resumo do seu servidor">
                                         </label>
                                     </div>
-                            </div>
-                            <div class="input-form col-xs-12 col-sm-12 col-md-12 pt-3">
+
                                 <div class="form-group">
                                     <strong>Link do Servidor</strong>
                                     <label>
-                                        <input type="text" name="link-servidor" value="" class="form-control"
+                                        <input type="text" name="link_servidor" class="form-control"
                                                placeholder="Exemplo: https://discord.gg/6duaudy">
                                     </label>
                                 </div>

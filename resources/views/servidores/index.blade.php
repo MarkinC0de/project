@@ -31,13 +31,14 @@
               </div>
           </div>
       </div>
-      @foreach($servidores as $servidor)
+
 
           <div id="serversS" class="block">
             <div class="container">
               <div class="row">
 
-                  <div class="row row-cols-3 row-cols-sm-1 row-cols-md-1">
+                  <div class="g-4 row row-cols-3 row-cols-sm-1 row-cols-md-1">
+                  @foreach($servidores as $servidor)
                     <div class="col-lg-3 mb-4">
 
                       <img src="https://placeholder.pics/svg/75x60/8BFFDA-8BFFDA/000000-8BFFDA" class="card-img-top" alt="">
@@ -56,10 +57,10 @@
                     </form>
                     </div>
 
-
+                  @endforeach
                     </div>
 
                   </div>
-      @endforeach
+
   </div>
 @endsection

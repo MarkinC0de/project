@@ -16,7 +16,7 @@ class ServidoresController extends Controller
     public function index()
     {
         $servidores = Servidores::latest()->paginate(8);
-        return view('servidores.index',compact('servidores')); // ENVIA A VARIAVEL SERVIDORES PARA A VIEW
+        return view('servidores.index',compact('servidores'));
 
 
     }
@@ -42,16 +42,14 @@ class ServidoresController extends Controller
         {
             $request->validate([
                 'nome' => 'required',
-                'link-servidor' => 'required',
+                'link_servidor' => 'required',
                 'tags' => 'required',
                 'descricao' => 'required',
                 'resumo_servidor' => 'required'
             ]);
 
             Servidores::create($request->all());
-
-            return redirect()->route('servidores.index')
-                            ->with('success','Servidor registrado com sucesso.');
+            return redirect()->route('servidores.index');
         }
     }
 
@@ -75,7 +73,9 @@ class ServidoresController extends Controller
     public function edit($id)
     {
         $servidores = Servidores::findOrFail($id);
+
         return view('servidores.edit',compact('servidores'));
+
 
     }
 
@@ -93,13 +93,12 @@ class ServidoresController extends Controller
         $servidores->update([
             'nome' => $request->nome,
             'resumo_servidor'=> $request->resumo_servidor,
-            'link-servidor'=> $request->link-servidor,
+            'link_servidor'=> $request->link_servidor,
             'descricao'=> $request->descricao,
             'tags'=> $request->tags,
         ]);
 
-        return redirect()->route('servidores.index')
-            ->with('Servidor atualizado com sucesso.');
+        return redirect()->route('servidores.index');
     }
 
     /**
@@ -114,7 +113,6 @@ class ServidoresController extends Controller
         $servidores = Servidores::findOrFail($id);
         $servidores->delete();
 
-        return redirect()->route('servidores.index')
-                        ->with('success','Servidor deletado  com sucesso');
+        return redirect()->route('servidores.index');
     }
 }
