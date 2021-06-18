@@ -3,7 +3,7 @@
     Editar
 @endsection
 @section('conteudo')
-
+<!--
     <div id="componentC" class="container rounded">
         <div class="container pb-4">
             <div class="row">
@@ -47,14 +47,6 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="input-form col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group mt-4">
-                                    <strong>tags</strong>
-                                    <label>
-                                        <input type="text" name="tags" class="form-control" placeholder="jogos,etc">
-                                    </label>
-                                </div>
-                            </div>
                             <div class="btn-final text-center pt-4 mb-3">
                                 <button id="sla" type="submit" class="btn rounded p-2 px-3">Cadastrar</button>
                             </div>
@@ -64,5 +56,51 @@
             </div>
         </div>
     </div>
+!-->
+<body id="cadastro-body">
+
+<div id="componentC" class="container rounded">
+    <div class="container pb-4">
+        <div class="row">
+            <div id="cadastro" class="col-lg-12 rounded" style="background-color: #fff;">
+                <form action=" {{ route('servidores.update',$servidores["id_servidor"]) }}" method="POST">
+                    @method('PUT')
+                    @csrf
+                    <h1 class="mb-3 pt-3"> Editar Informações do Servidor</h1>
+                    <div class="input-form col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Nome</strong>
+                            <input type="text" name="nome" value="" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="input-form col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Resumo</strong>
+                            <input type="text" name="resumo_servidor" value="" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="input-form col-xs-12 col-sm-12 col-md-12 pt-3">
+                        <div class="form-group">
+                            <strong>Link do Servidor</strong>
+                            <input type="text" name="link_servidor" value="" class="form-control"
+                                   placeholder="Exemplo: https://discord.gg/6duaudy">
+                        </div>
+                    </div>
+                    <div class="input-form col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group mt-4">
+                            <strong>Descrição</strong>
+                            <textarea class="form-control" style="height:50px" name="descricao" placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="btn-final text-center pt-4 mb-3">
+                        <button id="sla" type="submit" class="btn rounded p-2 px-3">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
 
 @endsection

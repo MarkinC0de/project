@@ -28,7 +28,9 @@ class ServidoresController extends Controller
      */
     public function create()
     {
+
         return view('servidores.create');
+
     }
 
     /**
@@ -43,9 +45,15 @@ class ServidoresController extends Controller
             $request->validate([
                 'nome' => 'required',
                 'link_servidor' => 'required',
-                'tags' => 'required',
+                //'tags' => 'required',
                 'descricao' => 'required',
                 'resumo_servidor' => 'required'
+            ],[
+                'nome.required' => 'Nome é obrigatório.',
+                'link_servidor.required' => 'Link do servidor é obrigatório.',
+                'descricao.required' => 'Descrição do servidor é obrigatória.',
+                'resumo_servidor.required' => 'Resumo do servidor é obrigatório.'
+
             ]);
 
             Servidores::create($request->all());
@@ -95,7 +103,6 @@ class ServidoresController extends Controller
             'resumo_servidor'=> $request->resumo_servidor,
             'link_servidor'=> $request->link_servidor,
             'descricao'=> $request->descricao,
-            'tags'=> $request->tags,
         ]);
 
         return redirect()->route('servidores.index');

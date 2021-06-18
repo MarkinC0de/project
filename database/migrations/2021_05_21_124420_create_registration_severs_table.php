@@ -18,9 +18,9 @@ class CreateRegistrationSeversTable extends Migration
             $table->timestamps();
             $table->string('nome')->unique();
             $table->string('link_servidor')->unique();
-            $table->string('tags');
-            $table->string('descricao');
-            $table->string('resumo_servidor',100);
+            $table->string('tags')->default('null');
+            $table->string('descricao')->default('null');
+            $table->string('resumo_servidor',90)->default('null');
         });
     }
 
